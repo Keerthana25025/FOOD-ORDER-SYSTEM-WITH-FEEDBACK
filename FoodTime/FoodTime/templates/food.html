@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}
+			Food Page
+		{% endblock %}
+	</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/foodcss.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"></link>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Food Menu</a>
+    <form  method="get" action="{% url 'food' %}" class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search for Fodd" aria-label="Search"/>
+    </form>
+  </div>
+</nav>
+<div class="container mt-4">
+  <h1>Food Menu</h1>
+  <div class="row">
+    {% for item in items %}
+    <div class="col-md-3">
+         <a href="{% url 'order' item.id %}">
+          <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+         </a>
+
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">₹{{ item.price }}</p>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}
+			index
+		{% endblock %}
+	</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/indexcss.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary nav justify-content-end" style="background-attachment: fixed;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Food Time</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">About Us</a>
+        </li><br>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'review' %}">Review</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+            <li><a class="dropdown-item" href="{% url 'admin:index' %}"> Admin Login</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="text-center text-white" style="margin-top: 200px;">
+  <h1 style="font-size: 64px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  animation: typing 3s steps(10) forwards, blink 0.5s step-end infinite;">Food Time!</h1>
+</div>
+<div style="margin-top:650px;color: white;text-align: center;">
+  <p>FoodTime © 2025 - All Rights Reserved
+</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}
+			Home Page
+		{% endblock %}
+	</title>
+	<style type="text/css">
+		body {
+			background-image: url('/static/images/home.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"></link>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  	<div class="container-fluid">
+    	<a class="navbar-brand" href="{% url 'home' %}">Home</a>
+    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      	<span class="navbar-toggler-icon"></span>
+    	</button>
+    	<div class="collapse navbar-collapse" id="navbarNav">
+      		<ul class="navbar-nav">
+        		<li class="nav-item">
+          			<a class="nav-link" href="{% url 'food' %}">Food Menu</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="{% url 'feed' %}">Feedback</a>
+        		</li>
+      		</ul>
+    	</div>
+  	</div>
+	</nav>
+	<div class="text-center mt-5">
+		<p>At FoodTime, we serve happiness on a plate. Whether you're craving comfort food, spicy delights, or a healthy bowl of goodness, we’ve got something special for every palate.</p><br>
+		<p>Why Choose Us?<br><br>
+		Fresh Ingredients Daily: We believe good food starts with the best ingredients.<br>
+
+		Authentic Recipes: Straight from the heart of tradition and innovation.<br>
+
+		Fast Delivery: Hot and delicious, right to your doorstep.<br>
+
+		Affordable Prices: Gourmet meals that don’t break the bank.</p>
+	</div>
+</body>
+</html>
